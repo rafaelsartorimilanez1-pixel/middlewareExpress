@@ -4,7 +4,7 @@
   "description": "Learning and testing routs",
   "license": "ISC",
   "author": "Rafael Sartori Milanez",
-  "type": "modules",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
