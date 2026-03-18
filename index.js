@@ -23,6 +23,7 @@ app.post('/users', (req, res) => {
     })
 })
 
+// Enviei um request usando o Postman
 app.put('/users/:id', (req, res) => {
     const userId = req.params.id
 
@@ -30,6 +31,14 @@ app.put('/users/:id', (req, res) => {
 
     res.json({
         message: `User ${userId}, updated to ${name}, ${email}`
+    })
+})
+
+app.delete('/users/:id', (req, res) => {
+    const userId = req.params.id
+
+    res.json({
+        message: `User with id: ${userId} is deleted successfuly`
     })
 })
 
