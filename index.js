@@ -12,11 +12,24 @@ app.get('/', (req, res) => {
 
 app.use('/user', router)
 
-app.post('/users', express.json(), (req, res) => {
+app.use(express.json())
+
+// Enviei um request usando o Postman
+app.post('/users', (req, res) => {
     const { name, email } = req.body
 
     res.json({
         message: `User ${name} email ${email}`
+    })
+})
+
+app.put('/users/:id', (req, res) => {
+    const userId = req.params.id
+
+    const { name, email } = req.body
+
+    res.json({
+        message: `User ${userId}, updated to ${name}, ${email}`
     })
 })
 
