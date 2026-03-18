@@ -12,6 +12,14 @@ app.get('/', (req, res) => {
 
 app.use('/user', router)
 
+app.post('/users', express.json(), (req, res) => {
+    const { name, email } = req.body
+
+    res.json({
+        message: `User ${name} email ${email}`
+    })
+})
+
 app.listen(port, (req, res) => {
     console.log(`App is running on port ${port}`)
 })
